@@ -13,7 +13,7 @@ const Profile = () => {
   }, );
 
   const generateProfile = () => {
-    if (user.length === 0) return;
+    if (user && Object.keys(user).length === 0) return;
     return (
       <div>
         <div
@@ -25,7 +25,7 @@ const Profile = () => {
           <div className="card glass lg:card-side text-neutral-content">
             <figure className="p-6 ">
               <img
-                src={user.profile_image.medium}
+                src={user.profile_image.medium??""}
                 className="rounded-full shadow-lg"
               />
             </figure>
